@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parallax Flow • CA Descriptive Answer AI Evaluator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="app-viewport">
+
+    <!-- ======================================================================
+         TOP FLOATING NAVIGATION BAR (Only shown when logged in)
+         ====================================================================== -->
+    <header class="pf-nav-floating-wrapper" id="pf-nav-wrapper" style="display: none;">
+      <nav class="pf-nav-pill-bar">
+        <!-- Brand -->
+        <div class="pf-nav-brand-lockup" id="nav-brand-logo">
+          <div class="pf-nav-eye-icon">PF</div>
+          <span class="pf-nav-brand-name">Parallax Flow <span class="font-mono text-xs" style="color: var(--pf-accent); margin-left: 4px; font-weight: 700; background: var(--pf-accent-light); padding: 2px 6px; border-radius: 4px;">AI AUTONOMOUS</span></span>
+        </div>
+
+        <!-- Center Nav Links -->
+        <div class="pf-nav-links-cluster">
+          <button class="pf-nav-link active" id="nav-link-dash">Dashboard</button>
+          <button class="pf-nav-link" id="nav-link-students">Student Directory</button>
+          <button class="pf-nav-link" id="nav-link-workbench">AI Audit Workbench</button>
+          <button class="pf-nav-link" id="nav-link-report">Gazette Report</button>
+        </div>
+
+        <!-- Right User Pill & Logout -->
+        <div class="pf-nav-utilities">
+          <div class="pf-admin-chip">
+            <span class="pf-admin-dot"></span>
+            <span class="pf-admin-email">admin@parallaxflow.in</span>
+          </div>
+
+          <button class="pf-btn-logout" id="btn-logout" title="Sign out of Admin Portal">
+            <span>Logout</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <!-- ======================================================================
+         VIEW 1: ADMIN LOGIN (Clean, Focused, Centered)
+         ====================================================================== -->
+    <section id="view-login" class="view-page active">
+      <div class="pf-login-wrapper">
+        <div class="pf-login-card">
+          <div class="pf-login-brand">
+            <div class="pf-login-logo">PF</div>
+            <span class="pf-login-name">Parallax Flow</span>
+          </div>
+
+          <div class="pf-login-header">
+            <h1 class="pf-login-title">Admin Login</h1>
+            <p class="pf-login-sub">CA Descriptive Answer AI Evaluator Portal</p>
+          </div>
+
+          <form id="login-form">
+            <div class="pf-form-group">
+              <label class="pf-form-label" for="admin-email">Examiner Email</label>
+              <input type="email" id="admin-email" class="pf-input" value="admin@parallaxflow.in" required placeholder="admin@parallaxflow.in">
+            </div>
+
+            <div class="pf-form-group">
+              <label class="pf-form-label" for="admin-password">Password</label>
+              <input type="password" id="admin-password" class="pf-input" value="••••••••••••" required placeholder="Enter password">
+            </div>
+
+            <button type="submit" class="pf-btn-primary" style="width: 100%; justify-content: center; padding: 12px; margin-top: 6px;">
+              <span>Sign In to Dashboard &rarr;</span>
+            </button>
+          </form>
+
+          <div class="pf-login-hint">
+            <span>Pre-filled with Institutional Faculty Credentials</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         VIEW 2: FACULTY EXECUTIVE DASHBOARD
+         ====================================================================== -->
+    <section id="view-dashboard" class="view-page">
+      <div class="pf-content-container">
+        
+        <!-- Header Row -->
+        <div class="pf-dash-hero-row">
+          <div class="pf-dash-hero-title">
+            <h1>Autonomous Evaluation Command Center</h1>
+            <p>CA Final Law Paper 4 • Continuous Neural Scoring &amp; ICAI Benchmark Validation</p>
+          </div>
+
+          <div class="pf-dash-hero-controls">
+            <button class="pf-btn-black pf-btn-sm" id="btn-trigger-ai-batch" title="Simulate batch upload and autonomous AI grading">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" style="margin-right: 5px;"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              <span>Execute Batch Ingestion (100 Papers)</span>
+            </button>
+            <select id="dash-test-selector" class="pf-select-pill">
+              <option value="law1" selected>Law Test - 1: Corporate &amp; Other Laws (42.0 Marks)</option>
+              <option value="law2">Law Test - 2: Economic Laws &amp; FEMA (40.0 Marks)</option>
+              <option value="audit1">Audit Test - 1: Professional Ethics &amp; SA (50.0 Marks)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- 4 Essential AI Autonomy KPI Cards -->
+        <div class="pf-bento-grid">
+          <div class="pf-bento-card">
+            <div class="pf-bento-card-label">Total Ingested</div>
+            <div class="pf-bento-card-val font-mono">100</div>
+            <div class="pf-bento-card-sub">Registered test takers</div>
+          </div>
+          <div class="pf-bento-card highlight">
+            <div class="pf-bento-card-label" style="display: flex; align-items: center; gap: 6px;">
+              <span class="pf-telemetry-dot verified"></span>
+              <span>Autonomous Verified</span>
+            </div>
+            <div class="pf-bento-card-val font-mono">80</div>
+            <div class="pf-bento-card-sub">80% Zero human touch required</div>
+          </div>
+          <div class="pf-bento-card" style="border-color: rgba(245, 158, 11, 0.35); background: linear-gradient(135deg, rgba(254, 243, 199, 0.25) 0%, #FFFFFF 100%);">
+            <div class="pf-bento-card-label" style="color: #92400E; display: flex; align-items: center; gap: 6px;">
+              <span class="pf-telemetry-dot exception"></span>
+              <span>Audit Exceptions</span>
+            </div>
+            <div class="pf-bento-card-val font-mono" style="color: #B45309;">20</div>
+            <div class="pf-bento-card-sub">20% Requiring administrative sign-off</div>
+          </div>
+          <div class="pf-bento-card">
+            <div class="pf-bento-card-label">Mean Inference Time</div>
+            <div class="pf-bento-card-val font-mono">3.8s <span style="font-size: 13px; font-weight: 500; color: var(--pf-muted);">/ paper</span></div>
+            <div class="pf-bento-card-sub">5.1 min total batch compute</div>
+          </div>
+        </div>
+
+        <!-- Two-Column Grid: Submissions Table vs Toppers Leaderboard -->
+        <div class="pf-dash-grid">
+          <!-- Left Table: Recent Submissions -->
+          <div class="pf-card-panel">
+            <div class="pf-panel-header" style="flex-wrap: wrap; gap: 10px;">
+              <div class="pf-panel-header-left">
+                <h3>Autonomous Telemetry Feed</h3>
+                <span class="pf-tag-pill font-mono" id="dash-submissions-count">80 Submissions</span>
+              </div>
+              
+              <!-- AI Autonomy Status Filters & Search Toolbar -->
+              <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                <div class="pf-segmented-modes" id="dash-ai-filter-tabs">
+                  <button class="pf-mode-btn active" data-filter="ALL">All (100)</button>
+                  <button class="pf-mode-btn" data-filter="CERTIFIED">Verified (80)</button>
+                  <button class="pf-mode-btn" data-filter="FLAGGED">Exceptions (20)</button>
+                </div>
+
+                <div class="pf-search-wrapper" style="width: 175px;">
+                  <svg class="pf-search-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                  </svg>
+                  <input 
+                    type="text" 
+                    id="dash-student-search" 
+                    class="pf-search-input" 
+                    placeholder="Search name/roll..." 
+                    autocomplete="off" 
+                    spellcheck="false"
+                  />
+                  <button type="button" id="dash-search-clear" class="pf-search-clear" title="Clear search" style="display: none;">
+                    &times;
+                  </button>
+                </div>
+                <button type="button" class="btn-table-review" id="btn-dash-open-directory" title="View Master Student Directory">
+                  All Students (100) &rarr;
+                </button>
+              </div>
+            </div>
+
+            <table class="pf-table">
+              <thead>
+                <tr>
+                  <th>Student &amp; Roll</th>
+                  <th>Ingested</th>
+                  <th>Pages</th>
+                  <th style="text-align: center;">AI Score</th>
+                  <th style="text-align: center; width: 200px; min-width: 200px;">AI Status &amp; Flag Reasoning</th>
+                  <th style="text-align: right;">Admin Action</th>
+                </tr>
+              </thead>
+              <tbody id="dash-submissions-tbody">
+                <!-- Dynamically populated by script.js -->
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Right Card: Batch Toppers Leaderboard -->
+          <div class="pf-card-panel">
+            <div class="pf-panel-header">
+              <div class="pf-panel-header-left">
+                <h3>Batch Toppers</h3>
+                <span class="pf-tag-pill font-mono">Top Rankers</span>
+              </div>
+            </div>
+
+            <div class="pf-toppers-list" id="dash-toppers-list">
+              <!-- Dynamically populated by script.js -->
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         VIEW 3: STUDENT PROFILE & ENROLLED TESTS
+         ====================================================================== -->
+    <!-- ======================================================================
+         VIEW 3: OVERALL STUDENT DIRECTORY & CANDIDATE DOSSIER
+         ====================================================================== -->
+    <section id="view-student-profile" class="view-page">
+      <div class="pf-content-container">
+        
+        <!-- SECTION A: OVERALL MASTER STUDENT DIRECTORY (Default View) -->
+        <div id="student-directory-container">
+          <!-- Top bar with Back button & Export -->
+          <div class="pf-view-nav-bar" style="margin-bottom: 4px;">
+            <button class="pf-btn-back" id="btn-back-from-profile">
+              &larr; Back to Dashboard
+            </button>
+            <div style="display: flex; gap: 10px; align-items: center;">
+              <button class="pf-btn-secondary pf-btn-sm" id="btn-export-students-csv">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" style="margin-right: 4px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                <span>Export Master Roster (CSV)</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Overall Cohort KPI Strip -->
+          <div class="pf-cohort-kpi-bar">
+            <div class="pf-cohort-kpi-item">
+              <span class="pf-cohort-kpi-label">Total Registered</span>
+              <strong class="font-mono">100 Candidates</strong>
+            </div>
+            <div class="pf-cohort-kpi-item">
+              <span class="pf-cohort-kpi-label">Tests Evaluated</span>
+              <strong class="font-mono" style="color: var(--pf-accent);">80 / 100 Completed</strong>
+            </div>
+            <div class="pf-cohort-kpi-item">
+              <span class="pf-cohort-kpi-label">Cohort Average</span>
+              <strong class="font-mono">32.4 / 42.0 (77.1%)</strong>
+            </div>
+            <div class="pf-cohort-kpi-item">
+              <span class="pf-cohort-kpi-label">Distinction Standing</span>
+              <strong class="font-mono" style="color: #059669;">72% of Batch</strong>
+            </div>
+            <div class="pf-cohort-kpi-item">
+              <span class="pf-cohort-kpi-label">Regional Chapters</span>
+              <strong>WIRC • SIRC • NIRC</strong>
+            </div>
+          </div>
+
+          <!-- Master Directory Card Panel -->
+          <div class="pf-card-panel">
+            <div class="pf-panel-header" style="flex-wrap: wrap; gap: 10px;">
+              <div class="pf-panel-header-left">
+                <h3>Overall Student Master Directory</h3>
+                <span class="pf-tag-pill font-mono" id="master-student-count">10 Students</span>
+              </div>
+
+              <!-- Filter & Search Toolbar -->
+              <div class="pf-directory-toolbar">
+                <div class="pf-search-wrapper" style="width: 210px;">
+                  <svg class="pf-search-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                  <input type="text" id="dir-student-search" class="pf-search-input" placeholder="Search directory..." autocomplete="off">
+                  <button type="button" id="dir-search-clear" class="pf-search-clear" title="Clear" style="display: none;">&times;</button>
+                </div>
+
+                <select id="dir-filter-region" class="pf-select-pill" style="font-size: 11px; height: 30px; padding: 2px 10px;">
+                  <option value="ALL">All Regions</option>
+                  <option value="WIRC">WIRC (Western)</option>
+                  <option value="SIRC">SIRC (Southern)</option>
+                  <option value="NIRC">NIRC (Northern)</option>
+                </select>
+
+                <select id="dir-filter-status" class="pf-select-pill" style="font-size: 11px; height: 30px; padding: 2px 10px;">
+                  <option value="ALL">All Status</option>
+                  <option value="Evaluated">Evaluated</option>
+                  <option value="Needs Review">Needs Review</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Master Student Table -->
+            <table class="pf-table">
+              <thead>
+                <tr>
+                  <th>Student &amp; Registration</th>
+                  <th>Regional Center</th>
+                  <th>Enrolled Tests</th>
+                  <th style="text-align: center;">Evaluation Progress</th>
+                  <th style="text-align: center;">Law Test 1 Score</th>
+                  <th style="text-align: center;">Batch Rank</th>
+                  <th style="text-align: center; width: 130px;">Status</th>
+                  <th style="text-align: right;">Action</th>
+                </tr>
+              </thead>
+              <tbody id="master-students-tbody">
+                <!-- Dynamically populated by script.js -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- SECTION B: INDIVIDUAL CANDIDATE DOSSIER & APPLIED TESTS -->
+        <div id="student-detail-container" style="display: none;">
+          <!-- Top bar with Back button -->
+          <div class="pf-view-nav-bar" style="margin-bottom: 4px;">
+            <button class="pf-btn-back" id="btn-back-to-directory">
+              &larr; Back to Master Student Directory
+            </button>
+            <span class="pf-tag-pill font-mono">Candidate Specific Dossier</span>
+          </div>
+
+          <!-- Candidate Dossier Card -->
+          <div class="pf-profile-header-card">
+            <div class="pf-profile-left">
+              <div class="pf-profile-avatar-lg" id="prof-avatar">AM</div>
+              <div class="pf-profile-name-group">
+                <div style="display: flex; align-items: center; gap: 10px;">
+                  <h2 id="prof-name">Aarav Mehta</h2>
+                  <span class="pf-tag-pill font-mono" id="prof-rank">Batch Rank: #12 / 80</span>
+                </div>
+                <div class="pf-profile-tags-row">
+                  <span class="pf-profile-tag font-mono" id="prof-roll">Roll No: 410892</span>
+                  <span class="pf-profile-tag font-mono" id="prof-reg">Reg: WRO-0648291</span>
+                  <span class="pf-profile-tag" id="prof-center">WIRC • Mumbai</span>
+                  <span class="pf-profile-tag">Attempt: May 2026 CA Final</span>
+                </div>
+              </div>
+            </div>
+            <div style="text-align: right;">
+              <button class="pf-btn-primary pf-btn-sm" id="btn-profile-open-wb">
+                <span>Open Evaluator Workbench &rarr;</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Enrolled Tests Section -->
+          <div class="pf-section-heading">
+            <h3>Applied &amp; Enrolled Tests</h3>
+            <p>Click on any evaluated test to review answers, step-markings, and layout presentation scores</p>
+          </div>
+
+          <div class="pf-enrolled-grid" id="prof-tests-grid">
+            <!-- Dynamically populated by script.js -->
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         VIEW 4: GRADING WORKBENCH (Optimized 2-Pane Split)
+         ====================================================================== -->
+    <section id="view-workbench" class="view-page">
+      <div class="pf-wb-container">
+        
+        <!-- Top Horizontal Question Ribbon -->
+        <div class="pf-ribbon-bar">
+          <div class="pf-ribbon-left">
+            <span class="pf-ribbon-label">Questions:</span>
+            <div class="pf-ribbon-track" id="ribbon-track">
+              <!-- Dynamically populated by script.js with Q1 to Q8 pills -->
+            </div>
+          </div>
+
+          <div class="pf-ribbon-right">
+            <div class="pf-pager-btns">
+              <button class="pf-btn-pager" id="btn-prev-q" title="Previous Question">&larr; Prev</button>
+              <span class="font-mono text-xs font-semibold" id="q-pager-label">1 / 8</span>
+              <button class="pf-btn-pager" id="btn-next-q" title="Next Question">Next &rarr;</button>
+            </div>
+            <button class="pf-btn-primary pf-btn-sm" id="btn-wb-view-report">
+              <span>View Full Report &rarr;</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- AI Autonomous Exception Resolution Banner Container -->
+        <div id="wb-ai-flag-container"></div>
+
+        <!-- 2-Column Split Body (55% Reading : 45% Grading) -->
+        <div class="pf-workbench-split">
+          
+          <!-- Left Pane: Question & Student Answer Script -->
+          <div class="pf-wb-reading-pane">
+            <div class="pf-reading-subheader">
+              <div class="pf-segmented-modes" role="tablist">
+                <button class="pf-mode-btn active" data-mode="ocr">Transcribed Answer</button>
+                <button class="pf-mode-btn" data-mode="diff">Candidate vs. Model Key</button>
+                <button class="pf-mode-btn" data-mode="scan">Answer Booklet Page</button>
+              </div>
+              <div class="pf-ocr-confidence-badge font-mono">
+                <span>OCR Confidence: 99.4%</span>
+              </div>
+            </div>
+
+            <div class="pf-reading-content">
+              <!-- Question Statement Box -->
+              <div class="pf-prompt-box">
+                <div class="pf-prompt-tags-row">
+                  <span class="pf-code-badge" id="wb-prompt-code">Q.1</span>
+                  <span class="pf-section-badge" id="wb-prompt-section">Companies Act 2013, §185</span>
+                  <span class="pf-marks-badge" id="wb-prompt-marks">5.0 Marks</span>
+                </div>
+                <h4 id="wb-prompt-title" style="font-size: 13.5px; font-weight: 700; margin-bottom: 6px;">Loans to Directors &amp; Inter-Corporate Security Validity</h4>
+                <div id="wb-prompt-text" class="pf-prompt-body">
+                  <!-- Injected by script.js -->
+                </div>
+              </div>
+
+              <!-- Student Script / Diff / Scan Display Cards -->
+              <div class="pf-transcript-card" id="wb-ocr-card">
+                <div class="pf-transcript-header">
+                  <strong>Candidate Handwritten Script (OCR Transcription)</strong>
+                  <span class="font-mono text-xs">Page 1 of 8</span>
+                </div>
+                <div id="wb-transcript-body" class="pf-transcript-body">
+                  <!-- Injected by script.js with matched semantic highlights -->
+                </div>
+              </div>
+
+              <div class="pf-transcript-card" id="wb-diff-card" style="display: none;">
+                <div class="pf-transcript-header">
+                  <strong>Candidate Answer vs. ICAI Recommended Solution</strong>
+                  <span class="font-mono text-xs">Alignment Matrix</span>
+                </div>
+                <div id="wb-diff-body" class="pf-transcript-body">
+                  <!-- Injected by script.js -->
+                </div>
+              </div>
+
+              <div class="pf-transcript-card" id="wb-scan-card" style="display: none;">
+                <div class="pf-transcript-header">
+                  <strong>Original Ruled Answer Script Image</strong>
+                  <span class="font-mono text-xs">High-Res Camera Scan</span>
+                </div>
+                <div id="wb-scan-body" class="pf-transcript-body" style="background: #FDFBF7;">
+                  <!-- Injected by script.js -->
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Pane: Rubric & Layout Presentation Scoring -->
+          <div class="pf-wb-grading-pane">
+            <div class="pf-grading-content">
+              <div class="pf-rubric-summary-bar">
+                <div>
+                  <h3 id="wb-rubric-title">ICAI Statutory Marking Rubric</h3>
+                  <span style="font-size: 11.5px; color: var(--pf-muted);">Includes Statutory 3-Tier Layout &amp; Presentation Marks</span>
+                </div>
+                <div class="pf-qscore-pill" id="wb-qscore-pill">4.5 / 5.0 Marks</div>
+              </div>
+
+              <!-- Step Cards (Generated dynamically with -0.5 / +0.5 steppers) -->
+              <div class="pf-steps-list" id="wb-step-cards-container">
+                <!-- Dynamically populated by script.js -->
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         VIEW 5: GAZETTE EVALUATION REPORT
+         ====================================================================== -->
+    <section id="view-report" class="view-page">
+      <div class="pf-content-container">
+        
+        <!-- Top Action Bar -->
+        <div class="pf-view-nav-bar">
+          <button class="pf-btn-back" id="btn-report-back-wb">
+            &larr; Back to Workbench
+          </button>
+
+          <div style="display: flex; gap: 10px;">
+            <button class="pf-btn-secondary" id="btn-report-print">
+              <span>Print Sheet</span>
+            </button>
+            <a class="pf-btn-primary" id="btn-report-dl-pdf" href="Law_Test_1_Full_Evaluation_Report_410892.pdf" download="Law_Test_1_Full_Evaluation_Report_410892.pdf">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              <span>Download Official PDF Report</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Official Report Sheet Card -->
+        <div class="pf-report-sheet">
+          <div class="pf-report-header">
+            <div>
+              <div class="pf-report-badge">ICAI OFFICIAL EVALUATION AUDIT DOSSIER</div>
+              <h2 style="font-size: 22px; font-weight: 800; margin-top: 4px;">Parallax Flow CA Academy</h2>
+              <p style="color: var(--pf-muted); font-size: 12px;">May 2026 CA Intermediate &amp; Final Mock Examination Diagnostic Series</p>
+            </div>
+            <div style="text-align: right;">
+              <div class="font-mono text-xs" style="color: var(--pf-muted);">Report ID: PF-EVAL-410892-01</div>
+              <div class="font-mono text-xs" style="color: var(--pf-muted);">Audited: 14 Oct 2026, 03:30 IST</div>
+              <div class="status-chip evaluated font-mono" style="margin-top: 5px;">Verified Assessment</div>
+            </div>
+          </div>
+
+          <!-- Candidate Details & Scorecard -->
+          <div class="pf-report-summary-grid">
+            <div class="pf-rep-meta-box">
+              <div class="pf-rep-row"><span>Candidate Name</span> <strong id="rep-name">Aarav Mehta</strong></div>
+              <div class="pf-rep-row"><span>Roll Number</span> <strong id="rep-roll" class="font-mono">410892</strong></div>
+              <div class="pf-rep-row"><span>Paper / Subject</span> <strong id="rep-paper">Paper 4: Corporate &amp; Other Laws</strong></div>
+              <div class="pf-rep-row"><span>Exam Center</span> <strong>WIRC • Mumbai Western Center</strong></div>
+              <div class="pf-rep-row"><span>Evaluation Engine</span> <strong style="color: var(--pf-accent);">Autonomous Neural Evaluator v4.2</strong></div>
+              <div class="pf-rep-row"><span>Cohort Performance</span> <strong class="font-mono">Rank #3 of 100 • Top 5%</strong></div>
+            </div>
+
+            <div class="pf-rep-score-box">
+              <span class="pf-rep-score-label">FINAL AWARDED SCORE</span>
+              <div class="pf-rep-score-huge font-mono" id="rep-score-huge">31.5 <span style="font-size: 18px; font-weight: 500; color: var(--pf-muted);">/ 42.0</span></div>
+              <div class="pf-rep-score-sub" id="rep-grade-badge">
+                <span class="status-chip evaluated font-mono">75.0% • Qualified with Distinction</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 1: 4-Pillar ICAI Core Competency Diagnostic Heatmap -->
+          <div>
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
+              <div>
+                <h4 style="font-size: 14px; font-weight: 700;">1. ICAI Core Competency Diagnostic Heatmap</h4>
+                <p style="font-size: 11.5px; color: var(--pf-muted);">Standardized rubric assessment evaluated across the 4 ICAI subjective marking dimensions</p>
+              </div>
+              <span class="pf-tag-pill font-mono">ICAI Evaluation Model</span>
+            </div>
+            <div class="pf-rep-competencies-grid" id="rep-competencies-grid">
+              <!-- Dynamically populated by script.js -->
+            </div>
+          </div>
+
+          <!-- Section 2: Strategic Strengths & Actionable Mark Deductions -->
+          <div>
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
+              <div>
+                <h4 style="font-size: 14px; font-weight: 700;">2. Diagnostic Insights: Scoring Strengths vs. Critical Mark Deductions</h4>
+                <p style="font-size: 11.5px; color: var(--pf-muted);">Actionable feedback highlighting exact legal and layout reasons for mark deductions and how to rectify them</p>
+              </div>
+            </div>
+            <div class="pf-rep-insights-grid" id="rep-insights-grid">
+              <!-- Dynamically populated by script.js -->
+            </div>
+          </div>
+
+          <!-- Section 3: Senior Evaluator's Strategic Directive -->
+          <div id="rep-mentor-card">
+            <!-- Dynamically populated by script.js -->
+          </div>
+
+          <!-- Section 4: Question-by-Question Marks Summary -->
+          <div>
+            <h4 style="font-size: 14px; font-weight: 700; margin-bottom: 10px;">3. Question-by-Question Marks &amp; Statutory Provisions Summary</h4>
+            <table class="pf-table" style="border: 1px solid var(--pf-line); border-radius: 12px; overflow: hidden;">
+              <thead>
+                <tr>
+                  <th>Question Code</th>
+                  <th>Statutory Topic &amp; Section Reference</th>
+                  <th style="text-align: center;">Max Marks</th>
+                  <th style="text-align: center;">Marks Awarded</th>
+                  <th style="text-align: center;">Performance</th>
+                </tr>
+              </thead>
+              <tbody id="rep-exec-tbody">
+                <!-- Dynamically populated by script.js -->
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Section 5: In-Depth Question Audit Trail with Candidate vs. ICAI Suggested Benchmark -->
+          <div>
+            <h4 style="font-size: 14px; font-weight: 700; margin-bottom: 10px;">4. Question-by-Question Rubric Audit &amp; Benchmark Comparison</h4>
+            <div id="rep-questions-audit-trail">
+              <!-- Dynamically populated by script.js -->
+            </div>
+          </div>
+
+          <!-- Section 6: Official Quality Assurance & Verification Footer -->
+          <div class="pf-rep-cert-footer">
+            <div>
+              <strong style="color: var(--pf-ink);">Parallax Flow Autonomous AI Protocol v4.2</strong>
+              <div style="font-size: 10.5px; color: var(--pf-muted); margin-top: 2px;">
+                Verified against ICAI May 2026 Suggested Answers &bull; 100% Autonomous Neural Grading &bull; Institutional Administrator Audit Trail Logged
+              </div>
+            </div>
+            <div style="text-align: right;">
+              <span class="font-mono text-xs" style="color: var(--pf-accent); font-weight: 700;">Security Checksum: SHA256-PF-AI-99420-CERTIFIED</span>
+              <div style="font-size: 10.5px; color: var(--pf-muted); margin-top: 2px;">
+                Autonomous Evaluation Hash Verified &bull; Cryptographically Sealed
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+
+  <!-- AI Batch Ingestion Simulator Modal -->
+  <div class="pf-modal-backdrop" id="modal-ai-batch">
+    <div class="pf-modal-card">
+      <div class="pf-modal-header">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--pf-accent)" stroke-width="2.2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          <strong style="font-size: 13.5px; font-weight: 700;">Autonomous Evaluation Pipeline Execution</strong>
+        </div>
+        <button class="pf-search-clear" id="btn-close-batch-modal" style="display: grid; width: 28px; height: 28px; font-size: 16px; border-radius: 50%; border: none; cursor: pointer;">&times;</button>
+      </div>
+      <div class="pf-modal-body">
+        <p style="font-size: 11.5px; color: var(--pf-muted); margin-bottom: 16px;">
+          Cohort: <strong>May 2026 CA Final Law Test 1</strong> (100 Scanned PDF Answer Booklets • 560 Pages)
+        </p>
+
+        <div class="pf-batch-step-row">
+          <div class="pf-batch-step-icon done" id="bstep-1-icon">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <div style="flex: 1;">
+            <div style="display: flex; justify-content: space-between; font-size: 12px; font-weight: 600;">
+              <span>1. Document Segmentation &amp; Handwriting OCR Extraction</span>
+              <span class="font-mono text-muted text-xs" id="bstep-1-pct">100% Complete</span>
+            </div>
+            <div class="pf-batch-progress-bar"><div class="pf-batch-progress-fill" style="width: 100%;"></div></div>
+          </div>
+        </div>
+
+        <div class="pf-batch-step-row">
+          <div class="pf-batch-step-icon done" id="bstep-2-icon">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <div style="flex: 1;">
+            <div style="display: flex; justify-content: space-between; font-size: 12px; font-weight: 600;">
+              <span>2. Neural Rubric Alignment &amp; Step-Grading</span>
+              <span class="font-mono text-muted text-xs" id="bstep-2-pct">100% Complete</span>
+            </div>
+            <div class="pf-batch-progress-bar"><div class="pf-batch-progress-fill" style="width: 100%;"></div></div>
+          </div>
+        </div>
+
+        <div class="pf-batch-step-row">
+          <div class="pf-batch-step-icon done" id="bstep-3-icon">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <div style="flex: 1;">
+            <div style="display: flex; justify-content: space-between; font-size: 12px; font-weight: 600;">
+              <span>3. Layout &amp; Presentation Marks Computation</span>
+              <span class="font-mono text-muted text-xs" id="bstep-3-pct">100% Complete</span>
+            </div>
+            <div class="pf-batch-progress-bar"><div class="pf-batch-progress-fill" style="width: 100%;"></div></div>
+          </div>
+        </div>
+
+        <div class="pf-batch-step-row">
+          <div class="pf-batch-step-icon done" id="bstep-4-icon">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <div style="flex: 1;">
+            <div style="display: flex; justify-content: space-between; font-size: 12px; font-weight: 600;">
+              <span>4. Autonomous Exception Routing (80/20 Institutional Protocol)</span>
+              <span class="font-mono text-muted text-xs" id="bstep-4-pct">Completed</span>
+            </div>
+            <div class="pf-batch-progress-bar"><div class="pf-batch-progress-fill" style="width: 100%;"></div></div>
+          </div>
+        </div>
+
+        <!-- Summary Result Box -->
+        <div style="background: rgba(240, 248, 255, 0.85); border: 1px solid var(--pf-line); border-radius: 12px; padding: 14px; margin-top: 18px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; text-align: center;">
+          <div>
+            <div class="font-mono font-bold" style="font-size: 22px; color: #059669;">80 Papers</div>
+            <div style="font-size: 11px; font-weight: 600; color: #065F46; margin-top: 2px;">Autonomous Verified</div>
+          </div>
+          <div>
+            <div class="font-mono font-bold" style="font-size: 22px; color: #B45309;">20 Papers</div>
+            <div style="font-size: 11px; font-weight: 600; color: #78350F; margin-top: 2px;">Flagged for Administrative Clearance</div>
+          </div>
+        </div>
+
+        <button class="pf-btn-black" id="btn-finish-batch-modal" style="width: 100%; margin-top: 18px; height: 38px;">
+          <span>View Telemetry Results Feed &rarr;</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="pf-toast" id="pf-toast">
+    <span id="toast-icon" style="display: inline-flex; align-items: center;"></span>
+    <span id="toast-msg">Operation completed successfully.</span>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
